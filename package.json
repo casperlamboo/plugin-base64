@@ -1,0 +1,35 @@
+{
+  "name": "plugin-base64",
+  "version": "0.0.1",
+  "dependencies": {},
+  "devDependencies": {
+    "jspm": "^0.17.0-beta.32"
+  },
+  "jspm": {
+    "name": "plugin-base64",
+    "main": "index.js",
+    "directories": {
+      "lib": "src"
+    },
+    "map": {
+      "./loader.js": {
+        "node": "./loader-production.js",
+        "browser": "./loader-dev.js"
+      }
+    },
+    "dependencies": {
+      "mime-types": "npm:mime-types@^2.1.12"
+    },
+    "devDependencies": {
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.17"
+    },
+    "peerDependencies": {
+      "path": "npm:jspm-nodelibs-path@^0.2.0",
+      "process": "npm:jspm-nodelibs-process@^0.2.0"
+    }
+  },
+  "scripts": {
+    "postinstall": "jspm install && cd example/ && npm install"
+  },
+  "license": "ISC"
+}
