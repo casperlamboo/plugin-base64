@@ -16,7 +16,7 @@ function loadBlob(url) {
     xhr.open('GET', url, true);
     xhr.responseType = 'blob';
     xhr.onload = function() {
-      if (this.status == 200) {
+      if (this.status === 200) {
         resolve(xhr.response);
       }
     };
