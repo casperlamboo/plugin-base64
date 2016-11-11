@@ -22,6 +22,8 @@ exports.fetch = function(load) {
 };
 
 exports.translate = function(load) {
+  load.metadata.format = 'esm';
+
   return [
     'export default new Blob([\'' + load.metadata.data + '\'], {',
     '  type: \'' + load.metadata.contentType + '\'',
