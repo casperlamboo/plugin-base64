@@ -25,7 +25,7 @@ exports.translate = function(load) {
   load.metadata.format = 'esm';
 
   return [
-    'export default new Blob([\'' + load.metadata.data + '\'], {',
+    'export default new Blob([\'' + load.metadata.data.toString('base64') + '\'], {',
     '  type: \'' + load.metadata.contentType + '\'',
     '});'
   ].join('\n');
