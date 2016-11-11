@@ -25,8 +25,12 @@ exports.translate = function(load) {
   load.metadata.format = 'esm';
 
   return [
-    'export default new Blob([\'' + load.metadata.data.toString('base64') + '\'], {',
-    '  type: \'' + load.metadata.contentType + '\'',
-    '});'
+    'const base64 = \'' + load.metadata.data.toString('base64') + '\';',
+    'const byteCharacters = atob(base64);',
+    'const byteArray = new Uint8Array(byteCharacters.length);',
+    'for (var i = 0; i < byteCharacters.length; i ++) {',
+    '  byteArray[i] = byteCharacters.charCodeAt(i);',
+    '}',
+    'export default new Blob([byteArray], { type: \'' + load.metadata.contentType + '\' })'
   ].join('\n');
 }
