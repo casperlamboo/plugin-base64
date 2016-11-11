@@ -32,7 +32,7 @@ SystemJS.config({
     "github:*/*.json"
   ],
   map: {
-    "fs": "github:jspm/nodelibs-fs@0.1.2",
+    "fs": "npm:jspm-nodelibs-fs@0.2.0",
     "mime-types": "npm:mime-types@2.1.12",
     "path": "npm:jspm-nodelibs-path@0.2.1",
     "process": "npm:jspm-nodelibs-process@0.2.0"
