@@ -1,14 +1,14 @@
-# Plugin Base64
-Base64 loader for [SystemJS](https://github.com/systemjs/systemjs)
+# Plugin Blob
+Blob loader for [SystemJS](https://github.com/systemjs/systemjs)
 # Usage
 Install the plugin
 
-```jspm install base64=github:casperlamboo/plugin-base64```
+```jspm install blob=github:casperlamboo/plugin-blob```
 
 Load a file
 
 ```javascript
-import image from './image.png!base64';
+import image from './image.png!blob';
 
 console.log(image);
 ```

@@ -1,7 +1,7 @@
 SystemJS.config({
   paths: {
     "npm:": "jspm_packages/npm/",
-    "plugin-base64/": "src/"
+    "plugin-blob/": "src/"
   },
   browserConfig: {
     "baseURL": "/"
@@ -13,7 +13,7 @@ SystemJS.config({
   },
   transpiler: "plugin-babel",
   packages: {
-    "plugin-base64": {
+    "plugin-blob": {
       "main": "index.js",
       "meta": {
         "*.js": {

@@ -1,12 +1,12 @@
 {
-  "name": "plugin-base64",
+  "name": "plugin-blob",
   "version": "0.0.1",
   "dependencies": {},
   "devDependencies": {
     "jspm": "^0.17.0-beta.32"
   },
   "jspm": {
-    "name": "plugin-base64",
+    "name": "plugin-blob",
     "main": "index.js",
     "directories": {
       "lib": "src"
