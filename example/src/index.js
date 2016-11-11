@@ -1,4 +1,6 @@
 // load image using base64 plugin
-import image from './doodle3d.png!base64';
+import imageBlob from './doodle3d.png!base64';
 
-document.write(`<img src="${image}" />`);
+const imageSource = URL.createObjectURL(imageBlob);
+
+document.write(`<img src="${imageSource}" />`);

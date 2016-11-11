@@ -1,6 +1,5 @@
 var fs = require('fs');
 var mime = require('mime-types')
-var path = require('path');
 
 exports.fetch = function(load) {
   return new Promise(function(resolve, reject) {
@@ -10,14 +9,20 @@ exports.fetch = function(load) {
         return;
       }
 
-      var type = mime.lookup(load.address);
+      var contentType = mime.lookup(load.address);
 
+      load.metadata.contentType = contentType;
+      load.metadata.data = result;
 
-      resolve('data:' + type + ';base64,' + result.toString('base64'));
+      resolve('');
     });
   });
 };
 
 exports.translate = function(load) {
-  return 'export default \'' + load.source + '\'';
+  return [
+    'export default new Blob([\'' + load.metadata.data + '\'], {',
+    '  type: \'' + load.metadata.contentType + '\'',
+    '});'
+  ].join('\n');
 }

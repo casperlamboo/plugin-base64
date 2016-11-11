@@ -1,9 +1,13 @@
 exports.fetch = function(load) {
-  return loadBlob(load.address).then(blobToBase64);
+  return loadBlob(load.address).then(function (blob) {
+    load.metadata.blob = blob;
+
+    return '';
+  });
 };
 
 exports.instantiate = function(load) {
-  return load.source;
+  return load.metadata.blob;
 };
 
 function loadBlob(url) {
@@ -18,16 +22,5 @@ function loadBlob(url) {
     };
     xhr.onerror = reject
     xhr.send();
-  });
-}
-
-function blobToBase64(blob) {
-  return new Promise(function(resolve, reject) {
-    const reader = new FileReader();
-    reader.readAsDataURL(blob);
-    reader.onloadend = () => {
-      resolve(reader.result);
-    };
-    reader.onerror = reject;
   });
 }
