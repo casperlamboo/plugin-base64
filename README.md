@@ -3,14 +3,13 @@ Blob loader for [SystemJS](https://github.com/systemjs/systemjs)
 # Usage
 Install the plugin
 
-```jspm install blob=github:casperlamboo/plugin-blob```
-
-Load a file
-
 ```javascript
-import image from './image.png!blob';
+// load image using blob plugin
+import imageBlob from './doodle3d.png!blob';
 
-console.log(image);
+const imageSource = URL.createObjectURL(imageBlob);
+
+document.write(`<img src="${imageSource}" />`);
 ```
 
 #Run Example
