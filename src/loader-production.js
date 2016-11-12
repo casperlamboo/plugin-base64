@@ -31,6 +31,6 @@ exports.translate = function(load) {
     'for (var i = 0; i < byteCharacters.length; i ++) {',
     '  byteArray[i] = byteCharacters.charCodeAt(i);',
     '}',
-    'export default new Blob([byteArray], { type: \'' + load.metadata.contentType + '\' })'
+    'export default new Blob([byteArray.buffer], { type: \'' + load.metadata.contentType + '\' })'
   ].join('\n');
 }
